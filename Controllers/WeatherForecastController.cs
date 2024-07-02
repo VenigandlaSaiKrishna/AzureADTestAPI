@@ -29,6 +29,7 @@ namespace AzureADTestAPI.Controllers
         //For Developer Use(Enable while using the swagger)
         //[Authorize]
         //[RequiredScope("API.ReadWrite")]
+
         [HttpGet(Name = "GetWeatherForecastAPI")]
         public IEnumerable<WeatherForecast> Get()
         {
