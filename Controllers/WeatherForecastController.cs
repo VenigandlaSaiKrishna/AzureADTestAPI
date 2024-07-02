@@ -30,7 +30,7 @@ namespace AzureADTestAPI.Controllers
         //[Authorize]
         //[RequiredScope("API.ReadWrite")]
 
-        [HttpGet(Name = "GetWeatherForecastAPI")]
+        [HttpGet, Route("GetWeatherForecastAPI")]
         public IEnumerable<WeatherForecast> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
@@ -40,6 +40,12 @@ namespace AzureADTestAPI.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToList();
+        }
+
+        [HttpGet, Route("StringData")]
+        public string GetData()
+        {
+            return "StringData";
         }
     }
 }
